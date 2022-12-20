@@ -1,5 +1,13 @@
-@tailwind base
-@tailwind components
-@tailwind utilities
-
 @import url("./weather-icons.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-200;
+}
+
+input {
+  @apply bg-gray-100;
+}
