@@ -1,9 +1,10 @@
 import BaseLayout from '../layouts/BaseLayout'
+import Index from "../components/Home"
 
 export default function Home() {
   return (
     <BaseLayout>
-      <p>Hello world</p>
+      <Index />
     </BaseLayout>
   )
 }
