@@ -4,7 +4,7 @@ import axios from "axios"
 import SearchCity from "./SearchCity"
 import SearchSubmit from "./SearchSubmit"
 
-const SearchForm = ({ setResults }) => {
+const SearchForm = ({ results, setResults }) => {
   const [city, setCity] = useState("")
   const [ loading, setLoading ] = useState(false)
 
@@ -14,6 +14,17 @@ const SearchForm = ({ setResults }) => {
 
     const { data: cities } = await axios.get(`/api/cities`, { params: { city } })
     // get the weathers in the cities
+    let weathers = []
+    for(let i = 0; i < cities.length; i++) {
+      const info = await axios.get('/api/weather', {
+        params: {
+          latitude: cities[i].latitude,
+          longitude: cities[i].longitude,
+        }
+      })
+      weathers.push({...info.data, city: cities[i].name})
+    }
+    setResults(weathers)
     setLoading(false)
   }
 

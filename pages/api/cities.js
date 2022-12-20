@@ -7,7 +7,11 @@ export default async function handler(req, res) {
 
   if (city) {
     try {
-      const response = await axios.get(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=${count}`)
+      const response = await axios.get(`https://geocoding-api.open-meteo.com/v1/search`, {
+        params: {
+          name: city, count
+        }
+      })
       const results = response.data.results.map(item => {
         return {
           "name": item.name,

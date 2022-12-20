@@ -4,14 +4,14 @@ import WeatherList from "./WeatherList"
 import EmptyState from "./EmptyState"
 
 const Home = () => {
-  const [ results, setResults ] = useState([])
+  const [ results, setResults ] = useState()
 
   return (
     <>
     <div className="flex flex-col items-center w-full h-full">
-      <SearchForm setResults={setResults} />
-    {results === []
-      ? <WeatherList />
+      <SearchForm results={results} setResults={setResults} />
+    {results
+      ? <WeatherList results={results} />
       : <EmptyState />
     }
     </div>

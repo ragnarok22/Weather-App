@@ -1,15 +1,6 @@
 // get the weather of a city
 import axios from "axios"
-
-
-function addDays(date, number) {
-  const newDate = new Date(date);
-  return new Date(newDate.setDate(date.getDate() + number));
-}
-
-function parseDate(date) {
-  return date.toISOString().split('T')[0]
-}
+import { addDays, parseDate } from "../../utils"
 
 export default async function handler(req, res) {
   const { latitude, longitude } = req.query
