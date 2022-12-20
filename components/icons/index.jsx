@@ -1,8 +1,7 @@
-
-const DaySunnyIcon = () => (
-  <i className="wi wi-day-sunny"></i>
+export const DaySunnyIcon = ({ className }) => (
+  <i className={`wi wi-day-sunny ${className || ""}`}></i>
 )
 
-export {
-  DaySunnyIcon
-}
+export const DayCloudyIcon = ({ className }) => (
+  <i className={`wi wi-day-cloudy ${className || ""}`}></i>
+)
