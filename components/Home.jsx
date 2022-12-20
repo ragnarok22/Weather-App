@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
     <div className="flex flex-col items-center w-full h-full">
-      <SearchForm />
+      <SearchForm setResults={setResults} />
     {results === []
       ? <WeatherList />
       : <EmptyState />
