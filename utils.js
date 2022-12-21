@@ -1,6 +1,7 @@
 import { DayFogIcon, DayOvercastIcon, DaySunnyIcon, NAIcon, RainIcon, ShowersIcon, SnowWindIcon, ThunderstormIcon } from "./components/icons";
 
 export function addDays(date, number) {
+  // given a date, added the numbers in days and returns a new date
   const newDate = new Date(date);
   return new Date(newDate.setDate(date.getDate() + number));
 }
@@ -11,12 +12,13 @@ export function parseDate(date) {
 }
 
 export function getDay(date) {
-  // returns the day of the week
+  // returns the day of the week. Just the first three letters
   const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   return week[date.getDay()].substring(0, 3)
 }
 
 export function getWheaterIcon (weathercode, color) {
+  // return an icon depending on the weathercode
   switch (weathercode) {
     case 0:
       // clear sky
@@ -78,5 +80,5 @@ export function getWheaterIcon (weathercode, color) {
 }
 
 export function celsiusToFahrenheit(temperature) {
-  return (temperature * 9/5) + 32;
+  return parseFloat(((temperature * 9/5) + 32).toFixed(2));
 }
