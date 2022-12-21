@@ -1,5 +1,6 @@
 import { addDays, celsiusToFahrenheit, getDay, getWheaterIcon } from "../utils"
 import { TrashIcon } from "./icons"
+import styles from "../styles/WeatherItem.module.css"
 
 const WeatherItem = ({ item, isCelsius, handleDelete }) => {
   const days = item.temperatures.map((t, i) => {
@@ -39,10 +40,10 @@ const WeatherItem = ({ item, isCelsius, handleDelete }) => {
       </div>
 
       {/* Weather info */}
-      <div className="flex mb-10 text-sm">
+      <div className={styles.item}>
         {item.temperatures.map((temperature, i) => (
           <div key={i} className="flex flex-col items-center mx-1">
-            <p className="uppercase">{days[i]}</p>
+            <p className="">{days[i]}</p>
             {
               isCelsius
               ? <p className="">{temperature}°</p>

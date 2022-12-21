@@ -1,0 +1,19 @@
+.item {
+  @apply flex mb-10 text-sm;
+}
+
+.item p:first-child {
+  @apply uppercase relative text-center;
+}
+
+.item div:not(:last-child) p:first-child {
+  @apply mr-1;
+}
+
+.item div:not(:last-child) p:first-child:after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  transform: translateY(30%);
+  @apply bg-white h-2/3 ml-1;
+}
