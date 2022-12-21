@@ -12,6 +12,7 @@ export default async function handler(req, res) {
           name: city, count
         }
       })
+
       if (response.data.results) {
         const results = response.data.results.map(item => {
           return {
@@ -21,11 +22,14 @@ export default async function handler(req, res) {
           }
         })
         res.status(200).json(results)
+      } else {
+        res.status(200).json({})
       }
-      res.status(200).json({})
+
     } catch (e) {
       res.status(500).json(e)
     }
+
   } else {
     res.status(400).json({
       message: "You should provide a city"
