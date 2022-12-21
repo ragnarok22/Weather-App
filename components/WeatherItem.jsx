@@ -1,6 +1,6 @@
-import { addDays, getDay, getWheaterIcon } from "../utils"
+import { addDays, celsiusToFahrenheit, getDay, getWheaterIcon } from "../utils"
 
-const WeatherItem = ({ item }) => {
+const WeatherItem = ({ item, isCelsius }) => {
   const days = item.temperatures.map((t, i) => {
     if (i === 0) {
       return "today"
@@ -42,7 +42,11 @@ const WeatherItem = ({ item }) => {
         {item.temperatures.map((temperature, i) => (
           <div key={i} className="flex flex-col items-center mx-1">
             <p className="uppercase">{days[i]}</p>
-            <p className="mx-1">{temperature}°</p>
+            {
+              isCelsius
+              ? <p className="">{temperature}°</p>
+              : <p className="">{celsiusToFahrenheit(temperature)}°</p>
+            }
           </div>
         ))}
       </div>

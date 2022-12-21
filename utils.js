@@ -76,3 +76,7 @@ export function getWheaterIcon (weathercode, color) {
       return <NAIcon className={color} />
   }
 }
+
+export function celsiusToFahrenheit(temperature) {
+  return (temperature * 9/5) + 32;
+}
