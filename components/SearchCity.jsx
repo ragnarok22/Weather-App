@@ -1,4 +1,4 @@
-const SearchCity = ({ city, setCity }) => {
+const SearchCity = ({ city, setCity, loading }) => {
   return (
     <input
       type="text"
@@ -6,6 +6,7 @@ const SearchCity = ({ city, setCity }) => {
       placeholder="Enter a city name"
       value={city}
       onChange={e => setCity(e.target.value)}
+      disabled={loading}
     />
   )
 }

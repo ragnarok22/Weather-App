@@ -31,7 +31,7 @@ const SearchForm = ({ results, setResults }) => {
   return (
     <form className="flex w-1/2 justify-around" onSubmit={handleSubmit}>
       <div className="w-2/3 mr-5">
-      <SearchCity city={city} setCity={setCity} />
+      <SearchCity city={city} setCity={setCity} loading={loading} />
       </div>
       <div className="w-1/3">
       <SearchSubmit loading={loading} />
