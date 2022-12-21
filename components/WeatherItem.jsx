@@ -1,6 +1,7 @@
 import { addDays, celsiusToFahrenheit, getDay, getWheaterIcon } from "../utils"
+import { TrashIcon } from "./icons"
 
-const WeatherItem = ({ item, isCelsius }) => {
+const WeatherItem = ({ item, isCelsius, handleDelete }) => {
   const days = item.temperatures.map((t, i) => {
     if (i === 0) {
       return "today"
@@ -25,7 +26,7 @@ const WeatherItem = ({ item, isCelsius }) => {
   })()
 
   return (
-    <div className={`w-full rounded-3xl ${bgColor} text-white p-3 mx-3 shadow-md h-48`}>
+    <div className={`w-full rounded-3xl ${bgColor} text-white p-3 mx-3 shadow-md h-48 flex flex-col items-center relative`}>
       {/* Header card */}
       <div className="flex">
         <div className="w-1/3">{getWheaterIcon(item.weathercode, iconColor)}</div>
@@ -50,6 +51,11 @@ const WeatherItem = ({ item, isCelsius }) => {
           </div>
         ))}
       </div>
+
+      {/* Delete button */}
+      <button onClick={handleDelete} className="my-1 absolute bottom-0">
+        <TrashIcon />
+      </button>
     </div>
   )
 }

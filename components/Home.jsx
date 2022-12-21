@@ -17,7 +17,7 @@ const Home = () => {
     <div className="flex flex-col items-center w-full h-full">
       <SearchForm results={results} setResults={setResults} />
     {results
-      ? <WeatherList results={results} isCelsius={isCelsius} />
+      ? <WeatherList results={results} setResults={setResults} isCelsius={isCelsius} />
       : <EmptyState />
     }
     </div>
