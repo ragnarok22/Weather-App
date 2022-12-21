@@ -13,18 +13,22 @@ const SearchForm = ({ results, setResults }) => {
     setLoading(true)
 
     const { data: cities } = await axios.get(`/api/cities`, { params: { city } })
-    // get the weathers in the cities
-    let weathers = []
-    for(let i = 0; i < cities.length; i++) {
-      const info = await axios.get('/api/weather', {
-        params: {
-          latitude: cities[i].latitude,
-          longitude: cities[i].longitude,
-        }
-      })
-      weathers.push({...info.data, city: cities[i].name})
+
+    // check if city or cities exist
+    if (Object.keys(cities).length !== 0) {
+      // get the weathers in the cities
+      let weathers = []
+      for(let i = 0; i < cities.length; i++) {
+        const info = await axios.get('/api/weather', {
+          params: {
+            latitude: cities[i].latitude,
+            longitude: cities[i].longitude,
+          }
+        })
+        weathers.push({...info.data, city: cities[i].name})
+      }
+      setResults(weathers)
     }
-    setResults(weathers)
     setLoading(false)
   }
 
