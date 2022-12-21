@@ -1,0 +1,7 @@
+{
+  "cities": [
+    { "name": "Paris", "latitude": 48.85341, "longitude": 2.3488 },
+    { "name": "Paris", "latitude": 33.66094, "longitude": -95.55551 },
+    { "name": "Paris", "latitude": 36.302, "longitude": -88.32671 }
+  ]
+}
