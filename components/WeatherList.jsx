@@ -7,7 +7,7 @@ const WeatherList = ({ results, setResults, isCelsius }) => {
     )
   }
   return (
-    <div className="flex h-full justify-center items-center">
+    <div className="flex flex-col md:flex-row h-full md:justify-center items-center mt-5 md:mt-0">
       {
         results.map((item, i) => (
           <WeatherItem

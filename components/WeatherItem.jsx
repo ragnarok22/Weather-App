@@ -26,7 +26,7 @@ const WeatherItem = ({ item, isCelsius, handleDelete }) => {
   })()
 
   return (
-    <div className={`w-full rounded-3xl ${bgColor} text-white p-3 mx-3 shadow-md h-48 flex flex-col items-center relative`}>
+    <div className={`w-full rounded-3xl ${bgColor} text-white p-3 mx-0 my-3 md:mx-3 md:my-0 shadow-md h-48 flex flex-col items-center relative`}>
       {/* Header card */}
       <div className="flex">
         <div className="w-1/3">{getWheaterIcon(item.weathercode, iconColor)}</div>

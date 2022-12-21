@@ -29,8 +29,8 @@ const SearchForm = ({ results, setResults }) => {
   }
 
   return (
-    <form className="flex w-1/2 justify-around" onSubmit={handleSubmit}>
-      <div className="w-2/3 mr-5">
+    <form className="flex w-full md:w-1/2 justify-around mt-5" onSubmit={handleSubmit}>
+      <div className="w-2/3 mr-3 md:mr-5">
       <SearchCity city={city} setCity={setCity} loading={loading} />
       </div>
       <div className="w-1/3">
